@@ -35,13 +35,15 @@ console.log(c.selfIntroduce()); // 제 이름은 rosumin이고 저는 28살 입�
 
 class MyDream extends student {
   constructor(name, age, gender, dream) {
+    // super를 이용해 부모 클래스의 값을 구분지어 자식 클래스에서만 사용할 값과 분리시킬 수 있다.
     super(name, age, gender);
     this.dream = dream;
   }
   Introduce() {
+    // super를 이용하면 부모 클래스의 메서드를 호출 할 수 있다
     return `제 이름은 ${this.name}입니다. 내년엔 ${super.NextYearAge()}살이 되며, 장래희망은 ${this.dream}입니다.`
   }
 }
 
 let d = new MyDream('rosumin', '28', 'male', '개발자');
-console.log(d.Introduce());
+console.log(d.Introduce()); // 제 이름은 rosumin입니다. 내년엔 29살이 되며, 장래희망은 개발자입니다.
